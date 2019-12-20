@@ -1,0 +1,593 @@
+<html>
+<head>
+<title>
+BlackBox - Shop Online, Order Food, Travel, Events, Local Search
+</title>
+<style type="text/css">
+.holder {
+background-color: #efefef;
+margin: auto;
+width: 1024px;
+}
+div {
+display: block;
+}
+body {
+box-sizing: border-box;
+display: block;
+table-layout:fixed;
+}
+.cursor {
+cursor: pointer;
+}
+.shadow{
+box-shadow: 0 10px 13px rgba(0,0,0,.12), 0 3px 14px rgba(0,0,0,.24);
+     
+}
+#rcorner
+{
+ border-radius: 5px;
+}
+#rcorner1
+{
+ border-radius: 25px;
+}
+.heading {
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 0;
+    padding: 10px 0 0;
+    color: #424242;
+}
+
+a {
+border: 0;
+outline: 0;
+cursor: pointer;
+background-color: transparent;
+text-decoration: none;
+}
+.line
+{
+    line-height:1.7;
+    }
+.figure
+{
+    background-color:#e5d9ff;    
+    box-shadow: 0 10px 15px rgba(0,0,0,.12), 0 3px 14px rgba(0,0,0,.24);
+    
+}
+.figure-text {
+    text-align: center;
+    padding: 7px 0;
+}
+.button {
+    font-weight: 400;
+    font-size: 14px;
+    color: #a1a1a1;
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0 0 10px;
+    text-rendering: optimizelegibility;
+    font-family: Roboto, sans-serif;
+    outline: medium none;
+}
+.button:after {
+    border-bottom: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid #202122;
+    border-top: 5px solid rgba(0,0,0,0);
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 5px;
+}
+.txt:hover {
+    text-decoration: underline;
+}
+.cell:hover {
+  background-size:  100% 100%;
+  transform:scale(1.0545,1.04);
+  transform-origin:center;
+  transition:1s;
+  }
+.posit
+{
+    margin:auto;
+}
+.posit2
+{
+    
+    float:left;
+}
+.slideshow-container {
+  max-width: 1100px;
+  position: relative;
+  margin: auto;
+}
+
+/* Fading animation */
+.ease {
+  -webkit-animation-name: ease;
+  -webkit-animation-duration: 1.5s;
+  animation-name: ease;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes ease {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes ease {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid grey;
+  border-right: 16px solid lightgrey;
+  border-bottom: 16px solid black;
+  border-left: 16px solid lightgrey;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+  
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: blue; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+
+
+</style>
+
+
+
+</head>
+
+<body link="black"  onload="myFunction()">
+
+
+
+
+
+
+
+<div id="loader"></div>
+
+
+<script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 1000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
+
+<div id="myDiv" class="animate-bottom">
+  <div>
+<holder class="holder posit">
+<table bgcolor="#efefef" class="posit" width=1100px >
+<tr>
+    <td width=80%><a href="index.html"><img src="logo.png" width=120 height=60></a></td>
+    <td><table><tr><td bgcolor="#fe610c" class="cursor txt" width=85 height=35 align=right style="border-radius:10px"><center><a href="freelist.php"><font color=white>Free Listing</a></center></font></td></tr></table></td>
+    <td align=right><a href="login.php">Login </a>/<a href="signup.php"> Sign Up </a> &nbsp</td>
+    </tr>
+   </table>
+</holder></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+<div class="slideshow-container cursor posit">
+
+<div class="mySlides ease cursor">
+  <img src="Book-a-table.jpg" style="width:1100px" onclick="location.href='http://www.foodpanda.com'" title="book restaurant table">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Bus-booking.jpg" style="width:1100px" onclick="location.href='http://www.redbus.com'" title="bus-booking">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Doctor.jpg" style="width:1100px" onclick="location.href='http://www.doctor.com'" title="doctors">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Entertainment.jpg" style="width:1100px" onclick="location.href='http://www.youtube.com'" title="entertainments">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Flights.jpg" style="width:1100px" onclick="location.href='http://www.indigo.com'" title="flights">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="flower_banner.jpg" style="width:1100px" onclick="location.href='http://www.proflowers.com'" title="flowers">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Groceries.jpg" style="width:1100px" onclick="location.href='http://www.bigbasket.com'" title="groceries">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Hotel.jpg" style="width:1100px" onclick="location.href='http://www.yatra.com'" title="Hotels">
+</div>
+
+<div class="mySlides ease cursor">
+  <img src="Simran-Homepage-banner.jpg" style="width:1100px" onclick="location.href='http://www.bookmyshow.com'" title="movies">
+</div>
+
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        
+        slides[slideIndex - 1].style.display = "block";
+        
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+</script>
+
+
+
+
+
+
+
+<div style="position:relative;z-index:1;" >
+<table bgcolor="#efefef" width=1100px align=center cellspacing=0 
+
+<tr><td width=28%>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp&nbsp</td></tr>
+
+<tr>
+<td rowspan=12>&nbsp</td>
+<td><font size=4 face="arial" >Popular Services</td><td>&nbsp</td><td>&nbsp&nbsp</td></tr>
+
+<tr><td align=center>    <table  cellspacing=0 width=100% class="line figure cell" >
+            <tr>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.foodpanda.com">RESTAURANTS</a></b>&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.foodpanda.com" class="txt"> Order Online </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.foodpanda.com"  class="txt"> Book Table </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.foodpanda.com" class="txt"> Trending </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.foodpanda.com" class="txt"> more...</a> &nbsp&nbsp&nbsp&nbsp</td><br>
+			<td width=50%><a href="http://www.foodpanda.com"><img src="restaurant.jpg"  width=100% height=155> </a></font></td>
+	        </tr>
+	        </table>
+	</td>
+	<td>&nbsp&nbsp</td>
+	<td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.flipkart.com">SHOP ONLINE </a> </b>&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.flipkart.com"  class="txt"> Mobile </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.flipkart.com"  class="txt"> Television </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.flipkart.com"  class="txt"> Air Conditioners </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.flipkart.com" class="txt"> more... </a> &nbsp&nbsp&nbsp&nbsp</td><br>
+			<td width=50%><a href="http://www.flipkart.com"><img src="shopfront.jpg"  width=100% height=155> </a></font></td>
+	        </tr>
+	        </table>
+	</td>
+    
+  
+    
+</tr>
+
+
+
+
+<tr><td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%><a href="movies.html"><img src="movies.jpg"  width=100% height=155></a></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.bookmyshow.com">MOVIES</a></b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.bookmyshow.com"  class="txt">Jab Harry Met S.. </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.bookmyshow.com" class="txt"> Mubarakan </a>&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.bookmyshow.com" class="txt"> Lipstic Under .. </a> &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.bookmyshow.com" class="txt">more... </a> &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+	<td>&nbsp&nbsp</td>
+	<td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%> <a href="http://www.doctors.com" class="txt"><img src="Doctors.jpg"  width=100% height=155></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.doctors.com" class="txt">DOCTORS</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.doctors.com" class="txt">Dentists &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.doctors.com" class="txt">Dermatologists &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.doctors.com" class="txt">ENT &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.doctors.com" class="txt">more... &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+    
+   
+    
+</tr>
+
+
+
+
+
+<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>                         
+
+<tr>
+<td><font size=4 face="arial" >Whats Trending?</td><td>&nbsp</td><td>&nbsp&nbsp</td></tr>
+
+<tr><td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%><a href="http://www.yatra.com" class="txt"><img src="travel.jpg"  width=100% height=175></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.yatra.com" class="txt">TRAVEL</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.indigo.com" class="txt">Flights &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.redbus.com" class="txt">Bus &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.trivago.com" class="txt">Hotels &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.cars24.com" class="txt">Car Rentals &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.indianrail.gov.com" class="txt">Train &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+	<td>&nbsp&nbsp</td>
+	<td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%><a href="dailyneeds.html" class="txt"><img src="daily.jpg"  width=100% height=175></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="dailyneeds.html" class="txt">DAILY NEEDS</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.bigbasket.com" class="txt">Grocery &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.netmeds.com" class="txt">Chemists &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.bakery.com" class="txt">Bakery &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="cakes.html" class="txt">Cakes & Desserts &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="dailyneeds.html" class="txt">more... &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+    
+    
+</tr>
+
+
+<tr><td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="http://www.repair.com" class="txt">REPAIRS</b>&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.repair.com" class="txt">AC &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.repair.com" class="txt">Laptop &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.repair.com" class="txt">Mobile Phone &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.repair.com" class="txt">Washing Machine &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.repair.com" class="txt">more... &nbsp&nbsp&nbsp&nbsp</td><br>
+			<td width=50%><a href="travel.html" class="txt"><img src="repairs.jpg"  width=100% height=175></font></td>
+	        </tr>
+	        </table>
+	</td>
+	<td>&nbsp&nbsp</td>
+	<td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="loans.html" class="txt">LOANS</b>&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="creditcards.html" class="txt">Credit Cards &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Home Loans &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Personal Loans &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Car Loans &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">more... &nbsp&nbsp&nbsp&nbsp</td><br>
+			<td width=50%><a href="loans.html" class="txt"><img src="loans.jpg"  width=100% height=175></font></td>
+	        </tr>
+	        </table>
+	</td>
+    
+    
+    
+</tr>
+
+
+
+<tr><td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%><a href="loans.html" class="txt"><img src="automobile.jpg"  width=100% height=175></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="loans.html" class="txt">AUTOMOBILES</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="http://www.cars.com" class="txt">New Cars &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.olx.com" class="txt">Used Cars &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.cars.com" class="txt">Popular Cars &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.loans.com" class="txt">Compare Cars &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="http://www.loans.com" class="txt">more...</a> &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+	<td>&nbsp&nbsp</td>
+	<td align=center>    <table  cellspacing=0 width=100% class="line figure cell">
+            <tr>
+            <td width=50%><a href="loans.html" class="txt"><img src="events.jpg"  width=100% height=175></font></td>
+            <td width=50%>&nbsp&nbsp<b><font face=Arial><a href="loans.html" class="txt">ENTERTAINMENT</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <font size=4 face="Calibri Light"><a href="loans.html" class="txt">Movies &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Plays &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Events &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">Exhibitions &nbsp&nbsp&nbsp&nbsp<br>
+				&nbsp <a href="loans.html" class="txt">more...</a> &nbsp&nbsp&nbsp&nbsp</td><br>			
+	        </tr>
+	        </table>
+	</td>
+    
+    
+    
+</tr>
+
+
+<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>         
+
+
+<tr><td colspan=3 rowspan=2>
+            <table bgcolor=white  rules=none id="rcorner1" class="shadow"  width=100%>
+            <tr><td>&nbsp</td><td></td><td></td></tr>
+            <tr>
+                <td width=33.3% ><a href="mobilephones.html">
+                        <div class="cursor"><center><img src="mobile2.png"  width=130 height=150 /></center></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading">Mobile Phones</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                <td width=33.3%><a href="televisionsets.html">
+                        <div class="cursor"><center><img src="television.jpg" width=130 height=150 /></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading">Television Sets</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                 <td width=34.3%><a href="digitalcamera.html">
+                        <div class="cursor"><center><img src="camera.jpg" width=130 height=150 /></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading">Digital Camera</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                </tr>
+                 <tr>
+                <td width=33%><a href="airconditioner.html">
+                        <div class="cursor"><center><img src="ac.jpg" height=150 width=130  /></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading"><font size=5>Air Conditioner</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                <td><a href="refrigerator.html">
+                        <div class="cursor"><center><img src="refrigerator.jpg" height=150 width=130 /></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading">Refrigerator</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                 <td><a href="tablets.html">
+                        <div class="cursor"><center><img src="tablets.jpg" height=150 width=130/></div>
+                        <figcaption class="figure-text txt">
+                        <span class="heading">Tablets</span><br>
+                        <button class="button txt" >SHOP NOW</button>
+                        </figcaption>
+                        </a>
+                    </td>
+                </tr>
+                
+                <tr><td>&nbsp</td><td></td><td></td></tr>
+            
+            </table>
+            
+            
+            
+            
+            
+            
+            
+<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>    
+<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+
+<tr><td>&nbsp</td> <td colspan=3><hr color=lightgrey size=3></td></tr>
+
+
+<tr><td>&nbsp</td> <td colspan=3><a href="about.html">About</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="customercare.html">Customer Care</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="feedback.php">Feedback</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="testimonials.html">Testimonials</a>&nbsp&nbsp</td></tr>
+<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+
+
+
+
+</table>
+
+
+</div>
+</div>
+</body>
+</html>
